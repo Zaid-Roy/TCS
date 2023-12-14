@@ -19,9 +19,8 @@ repositories {
 }
 
 dependencies {
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 	implementation group: 'com.tcs',name: 'gradle-dependencies', version:'0.0.1-SNAPSHOT'
-	runtimeOnly group: 'com.h2database', name: 'h2', version: '2.2.224'
 }
 
 tasks.named('test') {
