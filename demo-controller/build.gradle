@@ -1,0 +1,29 @@
+plugins {
+	id 'java'
+	id 'java-library'
+}
+
+group = 'com.tcs'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+jar {
+	archiveBaseName = 'demo-controller'
+	archiveVersion =  '0.0.1-SNAPSHOT'
+}
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+dependencies {
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'com.tcs',name: 'gradle-dependencies', version:'0.0.1-SNAPSHOT'
+	runtimeOnly group: 'com.h2database', name: 'h2', version: '2.2.224'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
