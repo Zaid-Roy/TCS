@@ -3,8 +3,8 @@ package com.tcs.democontroller.controller;
 import com.tcs.democontroller.EmployeeNotFoundException;
 import com.tcs.democontroller.EmployeeRepository;
 import com.tcs.democontroller.entities.Employee;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -34,14 +34,14 @@ class EmployeeController {
     // Single item
 
     @GetMapping("/employees/{id}")
-    Employee one(@PathVariable Long id) {
+    Employee one(@PathVariable("id") Long id) {
 
         return repository.findById(id)
                 .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
     @PutMapping("/employees/{id}")
-    Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
+    Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable("id") Long id) {
 
         return repository.findById(id)
                 .map(employee -> {
@@ -56,7 +56,7 @@ class EmployeeController {
     }
 
     @DeleteMapping("/employees/{id}")
-    void deleteEmployee(@PathVariable Long id) {
+    void deleteEmployee(@PathVariable("id") Long id) {
         repository.deleteById(id);
     }
 }
