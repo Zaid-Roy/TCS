@@ -19,7 +19,6 @@ repositories {
 }
 
 dependencies {
-
 	implementation group: 'com.tcs',name: 'gradle-dependencies', version:'0.0.1-SNAPSHOT'
 }
 
