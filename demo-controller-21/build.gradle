@@ -1,0 +1,24 @@
+plugins {
+	id 'java'
+	id 'java-library'
+}
+
+group = 'com.tcs'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '21'
+}
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+dependencies {
+	implementation group: 'com.tcs',name: 'gradle-dependencies', version:'0.0.1-SNAPSHOT'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
